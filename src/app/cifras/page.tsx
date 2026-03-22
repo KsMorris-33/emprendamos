@@ -42,20 +42,34 @@ export default function CifrasPage() {
         Ejemplo: <StatsOverview /> (Basado en el StatsGrid que ya hicimos o uno más específico)
       */}
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-                {/* Espacio para componente: @/features/stats/components/StatsCards */}
-                <div className="h-32 rounded-xl border-2 border-dashed flex items-center justify-center text-muted-foreground">
-                    Componente: StatsCards (Resumen de indicadores clave)
-                </div>
-                <div className="h-32 rounded-xl border-2 border-dashed flex items-center justify-center text-muted-foreground">
-                    Cifra: PIB Local Soacha
-                </div>
-                <div className="h-32 rounded-xl border-2 border-dashed flex items-center justify-center text-muted-foreground">
-                    Cifra: Empleos Formales
-                </div>
-                <div className="h-32 rounded-xl border-2 border-dashed flex items-center justify-center text-muted-foreground">
-                    Cifra: Densidad Empresarial
-                </div>
-            </div>
+         {/* Tarjeta 1: Resumen general (opcional, podrías poner un título) */}
+         <div className="rounded-xl border bg-card p-6 shadow-sm">
+         <p className="text-sm text-muted-foreground">Indicadores Clave</p>
+         <p className="text-2xl font-bold mt-2">Soacha</p>
+         <p className="text-xs text-muted-foreground mt-1">Datos 2021 - 2022</p>
+         </div>
+
+         {/* Tarjeta: PIB Local Soacha */}
+         <div className="rounded-xl border bg-card p-6 shadow-sm">
+         <p className="text-sm text-muted-foreground">PIB Local Soacha</p>
+         <p className="text-2xl font-bold mt-2">7.93</p>
+         <p className="text-xs text-muted-foreground mt-1">Billones COP</p>
+        </div>
+
+         {/* Tarjeta: Empleos Formales */}
+         <div className="rounded-xl border bg-card p-6 shadow-sm">
+         <p className="text-sm text-muted-foreground">Empleos Formales</p>
+         <p className="text-2xl font-bold mt-2">36.6%</p>
+         <p className="text-xs text-muted-foreground mt-1">de la población ocupada</p>
+         </div>
+
+         {/* Tarjeta: Densidad Empresarial */}
+         <div className="rounded-xl border bg-card p-6 shadow-sm">
+         <p className="text-sm text-muted-foreground">Densidad Empresarial</p>
+         <p className="text-2xl font-bold mt-2">570</p>
+         <p className="text-xs text-muted-foreground mt-1">unidades económicas visibles</p>
+         </div>
+         </div>
 
             {/* PASO 2: VISUALIZACIÓN GRÁFICA
         Gráficos de barras o líneas para mostrar tendencias.
@@ -78,12 +92,69 @@ export default function CifrasPage() {
                     <h3 className="font-semibold mb-4">Distribución por Sectores</h3>
                     {/* Espacio para componente: @/features/stats/components/SectorPieChart */}
                     <div className="h-[350px] bg-muted/20 rounded-lg flex items-center justify-center border border-dashed text-sm italic">
-                        Visualización: Gráfico de Torta (Comercio, Servicios, Industria)
+                    <div className="h-[350px] flex flex-col items-center justify-center">
+                    <div className="relative w-48 h-48">
+                        <svg viewBox="0 0 100 100" className="w-full h-full -rotate-90">
+                        {/* Sector Servicios 81.6% */}
+                        <circle
+                            cx="50"
+                            cy="50"
+                            r="45"
+                            fill="transparent"
+                            stroke="#3b82f6"
+                            strokeWidth="10"
+                            strokeDasharray={`${81.6 * 2.827} 282.7`}
+                            strokeLinecap="round"
+                        />
+                        {/* Sector Industria 17.6% */}
+                        <circle
+                            cx="50"
+                            cy="50"
+                            r="45"
+                            fill="transparent"
+                            stroke="#f59e0b"
+                            strokeWidth="10"
+                            strokeDasharray={`${17.6 * 2.827} 282.7`}
+                            strokeDashoffset={`-${81.6 * 2.827}`}
+                            strokeLinecap="round"
+                        />
+                        {/* Sector Primario 0.8% */}
+                        <circle
+                            cx="50"
+                            cy="50"
+                            r="45"
+                            fill="transparent"
+                            stroke="#10b981"
+                            strokeWidth="10"
+                            strokeDasharray={`${0.8 * 2.827} 282.7`}
+                            strokeDashoffset={`-${(81.6 + 17.6) * 2.827}`}
+                            strokeLinecap="round"
+                        />
+                            </svg>
+                            <div className="absolute inset-0 flex items-center justify-center">
+                            <span className="text-lg font-bold">Sectores</span>
+                            </div>
+                        </div>
+                        <div className="flex flex-wrap justify-center gap-4 mt-6">
+                            <div className="flex items-center gap-2">
+                            <div className="w-3 h-3 rounded-full bg-blue-500"></div>
+                            <span className="text-sm">Servicios: 81.6%</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                            <div className="w-3 h-3 rounded-full bg-amber-500"></div>
+                            <span className="text-sm">Industria y Construcción: 17.6%</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                            <div className="w-3 h-3 rounded-full bg-emerald-500"></div>
+                            <span className="text-sm">Sector Primario: 0.8%</span>
+                            </div>
+                        </div>
+                        </div>    
                     </div>
                 </div>
             </div>
 
-            {/* PASO 3: TABLA DETALLADA O TOP BARRIOS/COMUNAS
+                   {/* PASO 3: TABLA DETALLADA O TOP BARRIOS/COMUNAS
         Lista de las zonas de Soacha con mayor actividad.
       */}
             <section className="rounded-xl border bg-card overflow-hidden">
@@ -92,7 +163,39 @@ export default function CifrasPage() {
                 </div>
                 {/* Espacio para componente: @/features/stats/components/ComunasTable */}
                 <div className="p-8 text-center text-muted-foreground italic">
-                    Tabla: Detalle de emprendimientos por Comuna (1 a 6 y Corregimientos)
+                    <section className="rounded-xl border bg-card overflow-hidden">
+  <div className="overflow-x-auto">
+    <table className="w-full text-sm">
+      <thead className="bg-muted/50">
+        <tr>
+          <th className="text-center p-4 font-medium">Comuna</th>
+          <th className="text-center p-4 font-medium">Emprendimientos Registrados</th>
+          <th className="text-center p-4 font-medium">Participación (%)</th>
+        </tr>
+      </thead>
+      <tbody>
+        {[
+          { comuna: 'Comuna 1', emprendimientos: 1245, participacion: 18.2 },
+          { comuna: 'Comuna 2', emprendimientos: 982, participacion: 14.3 },
+          { comuna: 'Comuna 3', emprendimientos: 2103, participacion: 30.7 },
+          { comuna: 'Comuna 4', emprendimientos: 876, participacion: 12.8 },
+          { comuna: 'Comuna 5', emprendimientos: 654, participacion: 9.5 },
+          { comuna: 'Comuna 6', emprendimientos: 438, participacion: 6.4 },
+          { comuna: 'Corregimientos', emprendimientos: 562, participacion: 8.1 },
+        ].map((item, idx) => (
+          <tr key={idx} className="border-t">
+            <td className="p-4 font-medium">{item.comuna}</td>
+            <td className="p-4">{item.emprendimientos.toLocaleString()}</td>
+            <td className="p-4">{item.participacion}%</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  <div className="p-4 text-xs text-muted-foreground border-t">
+    Datos basados en información del DANE y Cámara de Comercio 2021 - 2022.
+  </div>
+</section>
                 </div>
             </section>
 
