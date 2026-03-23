@@ -79,11 +79,89 @@ export default function CifrasPage() {
                 <div className="col-span-full lg:col-span-4 rounded-xl border bg-card p-6 shadow-sm">
                     <h3 className="font-semibold mb-4 flex items-center">
                         <BarChartBig className="mr-2 h-5 w-5 text-primary" />
-                        Crecimiento Mensual de Empresas
+                        Fuerza Laboral Por Actividades
                     </h3>
                     {/* Espacio para componente: @/features/stats/components/MainGrowthChart (Usando Recharts) */}
                     <div className="h-[350px] bg-muted/20 rounded-lg flex items-center justify-center border border-dashed text-sm italic">
-                        Visualización: Gráfico de Líneas Recharts
+                        <div className="w-full overflow-x-auto">
+                <div className="min-w-[800px]">
+                    <svg viewBox="0 0 900 400" className="w-full h-auto">
+                    {/* Ejes */}
+                    <line x1="70" y1="30" x2="70" y2="350" stroke="#e2e8f0" strokeWidth="2" />
+                    <line x1="70" y1="350" x2="880" y2="350" stroke="#e2e8f0" strokeWidth="2" />
+
+                    {/* Etiquetas eje Y */}
+                    <text x="55" y="350" textAnchor="end" className="text-xs fill-muted-foreground">0%</text>
+                    <text x="55" y="285" textAnchor="end" className="text-xs fill-muted-foreground">5%</text>
+                    <text x="55" y="220" textAnchor="end" className="text-xs fill-muted-foreground">10%</text>
+                    <text x="55" y="155" textAnchor="end" className="text-xs fill-muted-foreground">15%</text>
+                    <text x="55" y="90" textAnchor="end" className="text-xs fill-muted-foreground">20%</text>
+
+                    {/* Líneas de guía */}
+                    <line x1="70" y1="350" x2="880" y2="350" stroke="#f1f5f9" strokeWidth="1" />
+                    <line x1="70" y1="285" x2="880" y2="285" stroke="#f1f5f9" strokeWidth="1" strokeDasharray="5,5" />
+                    <line x1="70" y1="220" x2="880" y2="220" stroke="#f1f5f9" strokeWidth="1" strokeDasharray="5,5" />
+                    <line x1="70" y1="155" x2="880" y2="155" stroke="#f1f5f9" strokeWidth="1" strokeDasharray="5,5" />
+                    <line x1="70" y1="90" x2="880" y2="90" stroke="#f1f5f9" strokeWidth="1" strokeDasharray="5,5" />
+
+                    {/* Datos */}
+                    {[
+                        { name: 'Comercio', fullName: 'Comercio y reparación', value: 18.9, color: '#34da12', x: 100 },
+                        { name: 'Industria', fullName: 'Industrias manufactureras', value: 18.7, color: '#60a5fa', x: 180 },
+                        { name: 'Otras ramas', fullName: 'Otras ramas*', value: 11.3, color: '#d5ec00', x: 260 },
+                        { name: 'Adm. Pública', fullName: 'Adm. pública y salud', value: 11.2, color: '#2563eb', x: 340 },
+                        { name: 'Act. Profes.', fullName: 'Act. profesionales', value: 10.5, color: '#e01a1a', x: 420 },
+                        { name: 'Transporte', fullName: 'Transporte', value: 8.7, color: '#60a5fa', x: 500 },
+                        { name: 'Act. Artísticas', fullName: 'Act. artísticas', value: 7.6, color: '#3cc1ca', x: 580 },
+                        { name: 'Construcción', fullName: 'Construcción', value: 6.9, color: '#2563eb', x: 660 },
+                        { name: 'Alojamiento', fullName: 'Alojamiento', value: 6.4, color: '#8c3bf6', x: 740 },
+                    ].map((item, idx) => {
+                        const barHeight = (item.value / 20) * 260; // 20% máximo = 260px altura
+                        const yPos = 350 - barHeight;
+
+                        return (
+                        <g key={idx}>
+                            {/* Barra */}
+                            <rect
+                            x={item.x}
+                            y={yPos}
+                            width="45"
+                            height={barHeight}
+                            fill={item.color}
+                            rx="4"
+                            className="hover:opacity-80 transition-opacity cursor-pointer"
+                            >
+                            <title>{`${item.fullName}: ${item.value}%`}</title>
+                            </rect>
+                            {/* Valor encima */}
+                            <text
+                            x={item.x + 22}
+                            y={yPos - 5}
+                            textAnchor="middle"
+                            className="text-xs font-medium fill-current"
+                            >
+                            {item.value}%
+                            </text>
+                            {/* Etiqueta debajo (rotada o en dos líneas si es necesario) */}
+                            <text
+                            x={item.x + 22}
+                            y="370"
+                            textAnchor="middle"
+                            className="text-[10px] fill-muted-foreground"
+                            >
+                            {item.name}
+                            </text>
+                        </g>
+                        );
+                    })}
+                    </svg>
+                </div>
+
+                {/* Leyenda compacta (opcional) */}
+                <div className="mt-4 text-xs text-muted-foreground text-center">
+                    *Otras ramas: agricultura, minería, servicios públicos e información
+                </div>
+                </div>
                     </div>
                 </div>
 
@@ -164,31 +242,31 @@ export default function CifrasPage() {
                 {/* Espacio para componente: @/features/stats/components/ComunasTable */}
                 <div className="p-8 text-center text-muted-foreground italic">
                     <section className="rounded-xl border bg-card overflow-hidden">
-  <div className="overflow-x-auto">
-    <table className="w-full text-sm">
-      <thead className="bg-muted/50">
-        <tr>
-          <th className="text-center p-4 font-medium">Comuna</th>
-          <th className="text-center p-4 font-medium">Emprendimientos Registrados</th>
-          <th className="text-center p-4 font-medium">Participación (%)</th>
-        </tr>
-      </thead>
-      <tbody>
-        {[
-          { comuna: 'Comuna 1', emprendimientos: 1245, participacion: 18.2 },
-          { comuna: 'Comuna 2', emprendimientos: 982, participacion: 14.3 },
-          { comuna: 'Comuna 3', emprendimientos: 2103, participacion: 30.7 },
-          { comuna: 'Comuna 4', emprendimientos: 876, participacion: 12.8 },
-          { comuna: 'Comuna 5', emprendimientos: 654, participacion: 9.5 },
-          { comuna: 'Comuna 6', emprendimientos: 438, participacion: 6.4 },
-          { comuna: 'Corregimientos', emprendimientos: 562, participacion: 8.1 },
-        ].map((item, idx) => (
-          <tr key={idx} className="border-t">
-            <td className="p-4 font-medium">{item.comuna}</td>
-            <td className="p-4">{item.emprendimientos.toLocaleString()}</td>
-            <td className="p-4">{item.participacion}%</td>
-          </tr>
-        ))}
+                    <div className="overflow-x-auto">
+                        <table className="w-full text-sm">
+                        <thead className="bg-muted/50">
+                            <tr>
+                            <th className="text-center p-4 font-medium">Comuna</th>
+                            <th className="text-center p-4 font-medium">Emprendimientos Registrados</th>
+                            <th className="text-center p-4 font-medium">Participación (%)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {[
+                            { comuna: 'Comuna 1', emprendimientos: 1245, participacion: 18.2 },
+                            { comuna: 'Comuna 2', emprendimientos: 982, participacion: 14.3 },
+                            { comuna: 'Comuna 3', emprendimientos: 2103, participacion: 30.7 },
+                            { comuna: 'Comuna 4', emprendimientos: 876, participacion: 12.8 },
+                            { comuna: 'Comuna 5', emprendimientos: 654, participacion: 9.5 },
+                            { comuna: 'Comuna 6', emprendimientos: 438, participacion: 6.4 },
+                            { comuna: 'Corregimientos', emprendimientos: 562, participacion: 8.1 },
+                            ].map((item, idx) => (
+                            <tr key={idx} className="border-t">
+                                <td className="p-4 font-medium">{item.comuna}</td>
+                                <td className="p-4">{item.emprendimientos.toLocaleString()}</td>
+                                <td className="p-4">{item.participacion}%</td>
+                            </tr>
+                            ))}
       </tbody>
     </table>
   </div>
