@@ -28,46 +28,60 @@ export default function CasosExitoPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {/* Espacio para componente: Iteración de historias reales */}
                 <div className="group relative rounded-2xl border bg-card p-2 shadow-sm transition-all hover:shadow-md">
-                    <div className="aspect-video w-full rounded-xl bg-muted flex items-center justify-center italic text-xs">
-                        [Imagen: Emprendimiento de Textiles Comuna 4]
+                    <div className="aspect-video w-full rounded-xl bg-muted flex items-center justify-center p-4">
+                        <img 
+                            src="/cropped-cropped-FONDO-MARCA-DE-AGUA.webp" 
+                            alt="Empaflexco Logo" 
+                            className="h-full w-full object-contain"
+                        />
                     </div>
                     <div className="p-4 space-y-2">
                         <div className="flex items-center gap-2 text-primary">
                             <BadgeCheck className="h-4 w-4" />
                             <span className="text-xs font-bold uppercase">Manufactura</span>
                         </div>
-                        <h3 className="text-xl font-bold italic text-muted-foreground text-center py-4 border-2 border-dashed rounded-lg">
-                            Componente: SuccessStoryCard (Prop: storyId="1")
+                        <h3 className="text-xl font-bold italic text-muted-foreground text-justify py-4 border-2 border-dashed rounded-lg">
+                            Empaflexco es una empresa colombiana especializada en la fabricación de empaques flexibles y soluciones laminadas para los sectores de alimentos, farmacéuticos e industrial. Desarrollamos productos de alta calidad que garantizan protección, frescura y presentación óptima para cada marca.
                         </h3>
                     </div>
                 </div>
 
                 <div className="group relative rounded-2xl border bg-card p-2 shadow-sm transition-all hover:shadow-md">
-                    <div className="aspect-video w-full rounded-xl bg-muted flex items-center justify-center italic text-xs">
-                        [Imagen: Startup Tech Ciudad Verde]
+                    <div className="aspect-video w-full rounded-xl bg-muted flex items-center justify-center p-4">
+                        <img 
+                            src="/Logo_7.png" 
+                            alt="Limor de Colombia Biotecnología Logo" 
+                            className="h-full w-full object-contain"
+                        />
                     </div>
                     <div className="p-4 space-y-2">
                         <div className="flex items-center gap-2 text-primary">
                             <Lightbulb className="h-4 w-4" />
-                            <span className="text-xs font-bold uppercase">Tecnología</span>
+                            <span className="text-xs font-bold uppercase">Desarrollo y Comercialización</span>
                         </div>
-                        <h3 className="text-xl font-bold italic text-muted-foreground text-center py-4 border-2 border-dashed rounded-lg">
-                            Componente: SuccessStoryCard (Prop: storyId="2")
+                        <h3 className="text-xl font-bold italic text-muted-foreground text-justify py-4 border-2 border-dashed rounded-lg">
+                            El Grupo empresarial LIMOR es una organización colombiana privada dedicada a la investigación, desarrollo y comercialización de nuevos productos para el sector agropecuario, manteniendo el equilibrio entre el hombre y la naturaleza.
                         </h3>
                     </div>
                 </div>
 
                 <div className="group relative rounded-2xl border bg-card p-2 shadow-sm transition-all hover:shadow-md">
                     <div className="aspect-video w-full rounded-xl bg-muted flex items-center justify-center italic text-xs">
-                        [Imagen: Gastronomía San Mateo]
+                        <div className="aspect-video w-full rounded-xl bg-muted flex items-center justify-center p-4">
+                        <img 
+                            src="/rayogas-C8FD8FDA9126DA5B174651155thumbnail.png" 
+                            alt="Rayogas Logo" 
+                            className="h-full w-full object-contain"
+                        />
+                    </div>
                     </div>
                     <div className="p-4 space-y-2">
                         <div className="flex items-center gap-2 text-primary">
                             <Users className="h-4 w-4" />
-                            <span className="text-xs font-bold uppercase">Gastronomía</span>
+                            <span className="text-xs font-bold uppercase">ENERGÉTICO</span>
                         </div>
-                        <h3 className="text-xl font-bold italic text-muted-foreground text-center py-4 border-2 border-dashed rounded-lg">
-                            Componente: SuccessStoryCard (Prop: storyId="3")
+                        <h3 className="text-xl font-bold italic text-muted-foreground text-justify py-4 border-2 border-dashed rounded-lg">
+                            Rayogas S.A.S. E.S.P. impulsa el futuro del país abasteciendo el mercado a través de nuestra red de distribución de GLP, ofreciendo alternativas innovadoras y eficientes con un portafolio integrado de energías, entregando soluciones hechas a la medida de nuestros clientes con un servicio confiable y oportuno. 
                         </h3>
                     </div>
                 </div>
