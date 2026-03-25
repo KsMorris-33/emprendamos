@@ -10,6 +10,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { LearningRoadmap } from "@/features/aprende/componentes/LearningRoadmap";
+import { SalesStrategiesModal } from "@/features/aprende/componentes/SalesStrategiesModal";
+import { LearningPlatformsModal } from "@/features/aprende/componentes/LearningPlatformsModal";
 
 export const metadata: Metadata = {
     title: "Aprende a Emprender | Soacha Emprende",
@@ -54,10 +56,14 @@ export default function AprendePage() {
                         Pasos legales para constituir tu empresa en Soacha y beneficios tributarios locales.
                     </p>
                     <div className="mt-4 pt-4">
-                        <button className="w-full bg-teal-500 hover:bg-teal-600 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2">
+                        <a 
+                            href="/aprende/pasos-empresa.pdf"
+                            download="pasos-empresa.pdf"
+                            className="w-full bg-teal-500 hover:bg-teal-600 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
+                        >
                             <FileText className="h-4 w-4" />
                             Descargar PDF
-                        </button>
+                        </a>
                     </div>
                     <div className="mt-4 pt-4 border-t border-dashed text-xs italic text-center text-muted-foreground">
                         Contenido Gratis
@@ -71,10 +77,7 @@ export default function AprendePage() {
                         Cómo vender más en tu comuna y expandir tu alcance a todo Cundinamarca.
                     </p>
                     <div className="mt-4 pt-4">
-                            <button className="w-full bg-teal-500 hover:bg-teal-600 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2">
-                                <Lightbulb className="h-4 w-4" />
-                                Ver estrategias de ventas
-                            </button>
+                            <SalesStrategiesModal />
                         </div>
                     <div className="mt-4 pt-4 border-t border-dashed text-xs italic text-center text-muted-foreground">
                         Conoce más aquí
@@ -88,10 +91,7 @@ export default function AprendePage() {
                         Micro-cápsulas de aprendizaje con expertos y empresarios exitosos de la región.
                     </p>
                     <div className="mt-4 pt-4">
-                        <button className="w-full bg-teal-500 hover:bg-teal-600 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2">
-                            <PlayCircle className="h-4 w-4" />
-                            Ver cursos en video
-                        </button>
+                        <LearningPlatformsModal />
                     </div>
                     <div className="mt-4 pt-4 border-t border-dashed text-xs italic text-center text-muted-foreground">
                         Cápsulas en solo 5 min
