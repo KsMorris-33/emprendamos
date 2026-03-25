@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { BadgeCheck, Lightbulb, Users } from "lucide-react";
+import YouTubePlayer from "@/features/casos-exito/YTPlayer";
 
 export const metadata: Metadata = {
     title: "Casos de Éxito | Soacha Emprende",
@@ -29,9 +30,9 @@ export default function CasosExitoPage() {
                 {/* Espacio para componente: Iteración de historias reales */}
                 <div className="group relative rounded-2xl border bg-card p-2 shadow-sm transition-all hover:shadow-md">
                     <div className="aspect-video w-full rounded-xl bg-muted flex items-center justify-center p-4">
-                        <img 
-                            src="/cropped-cropped-FONDO-MARCA-DE-AGUA.webp" 
-                            alt="Empaflexco Logo" 
+                        <img
+                            src="/cropped-cropped-FONDO-MARCA-DE-AGUA.webp"
+                            alt="Empaflexco Logo"
                             className="h-full w-full object-contain"
                         />
                     </div>
@@ -48,9 +49,9 @@ export default function CasosExitoPage() {
 
                 <div className="group relative rounded-2xl border bg-card p-2 shadow-sm transition-all hover:shadow-md">
                     <div className="aspect-video w-full rounded-xl bg-muted flex items-center justify-center p-4">
-                        <img 
-                            src="/Logo_7.png" 
-                            alt="Limor de Colombia Biotecnología Logo" 
+                        <img
+                            src="/Logo_7.png"
+                            alt="Limor de Colombia Biotecnología Logo"
                             className="h-full w-full object-contain"
                         />
                     </div>
@@ -68,12 +69,12 @@ export default function CasosExitoPage() {
                 <div className="group relative rounded-2xl border bg-card p-2 shadow-sm transition-all hover:shadow-md">
                     <div className="aspect-video w-full rounded-xl bg-muted flex items-center justify-center italic text-xs">
                         <div className="aspect-video w-full rounded-xl bg-muted flex items-center justify-center p-4">
-                        <img 
-                            src="/rayogas-C8FD8FDA9126DA5B174651155thumbnail.png" 
-                            alt="Rayogas Logo" 
-                            className="h-full w-full object-contain"
-                        />
-                    </div>
+                            <img
+                                src="/rayogas-C8FD8FDA9126DA5B174651155thumbnail.png"
+                                alt="Rayogas Logo"
+                                className="h-full w-full object-contain"
+                            />
+                        </div>
                     </div>
                     <div className="p-4 space-y-2">
                         <div className="flex items-center gap-2 text-primary">
@@ -81,7 +82,7 @@ export default function CasosExitoPage() {
                             <span className="text-xs font-bold uppercase">ENERGÉTICO</span>
                         </div>
                         <h3 className="text-xl font-bold italic text-muted-foreground text-justify py-4 border-2 border-dashed rounded-lg">
-                            Rayogas S.A.S. E.S.P. impulsa el futuro del país abasteciendo el mercado a través de nuestra red de distribución de GLP, ofreciendo alternativas innovadoras y eficientes con un portafolio integrado de energías, entregando soluciones hechas a la medida de nuestros clientes con un servicio confiable y oportuno. 
+                            Rayogas S.A.S. E.S.P. impulsa el futuro del país abasteciendo el mercado a través de nuestra red de distribución de GLP, ofreciendo alternativas innovadoras y eficientes con un portafolio integrado de energías, entregando soluciones hechas a la medida de nuestros clientes con un servicio confiable y oportuno.
                         </h3>
                     </div>
                 </div>
@@ -91,21 +92,8 @@ export default function CasosExitoPage() {
           Ideal para un componente de impacto visual grande.
       */}
             <section className="rounded-3xl bg-muted/50 p-8 md:p-16 border">
-                <div className="max-w-4xl mx-auto text-center space-y-6">
-                    <blockquote className="text-2xl md:text-3xl font-medium italic">
-                        "Emprender en Soacha me enseñó que la resiliencia es nuestro mayor recurso.
-                        Hoy mi empresa emplea a 15 madres cabeza de familia de la Comuna 2."
-                    </blockquote>
-                    <div className="space-y-1">
-                        <cite className="not-italic font-bold text-lg text-primary">— Martha Rodríguez</cite>
-                        <p className="text-sm text-muted-foreground text-center">Fundadora de Eco-Moda Soachuna</p>
-                    </div>
-
-                    {/* Espacio para componente: @/features/casos/components/FeaturedVideoPlayer */}
-                    <div className="mt-8 h-40 border-2 border-dashed rounded-2xl flex items-center justify-center text-muted-foreground">
-                        Componente: VideoTestimonial (Reproductor optimizado)
-                    </div>
-                </div>
+                <h2 className="text-2xl font-bold text-center">Historias que inspiran</h2>
+                <YouTubePlayer videoId="vklV2GOCQko" />
             </section>
 
             {/* 4. CALL TO ACTION: ¿QUIERES APARECER AQUÍ? */}

@@ -4,15 +4,12 @@ import { ArrowRight, TrendingUp } from "lucide-react";
 
 export const Hero = () => {
     return (
-        <section className="relative w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-background">
-            {/* Elemento decorativo de fondo (opcional - sutil) */}
-            <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:20px_20px] pointer-events-none" />
-
-            <div className="container relative z-10 px-4 md:px-6">
-                <div className="flex flex-col items-center space-y-8 text-center">
+        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-background">
+            <div className="container relative px-4 md:px-6">
+                <div className="flex flex-col items-center text-center">
 
                     {/* Badge Motivador */}
-                    <div className="inline-flex items-center gap-2 rounded-full border bg-muted/50 px-4 py-1.5 text-sm font-medium transition-colors hover:bg-muted">
+                    <div className="inline-flex -mt-20 items-center gap-2 rounded-full border bg-muted/50 px-4 py-1.5 text-sm font-medium transition-colors hover:bg-muted">
                         <TrendingUp className="h-4 w-4 text-primary" />
                         <span>Soacha creció un 15% en exportaciones locales</span>
                     </div>

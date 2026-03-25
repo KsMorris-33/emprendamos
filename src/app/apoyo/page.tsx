@@ -58,9 +58,9 @@ export default function RedApoyoPage() {
                             <CardDescription>Sede Soacha - Centro</CardDescription>
                         </CardHeader>
                         <CardContent className="text-sm text-muted-foreground">
-                         <CardContent className="text-sm text-muted-foreground"></CardContent>    
+                            <CardContent className="text-sm text-muted-foreground"></CardContent>
                             Dirección: Cra. 7 #11 - 83, Soacha, Cundinamarca
-                         <CardContent className="text-sm text-muted-foreground"></CardContent>
+                            <CardContent className="text-sm text-muted-foreground"></CardContent>
                             Teléfono: (601) 3830330
                         </CardContent>
                     </Card>
@@ -78,9 +78,9 @@ export default function RedApoyoPage() {
                             <CardDescription>Programas Municipales</CardDescription>
                         </CardHeader>
                         <CardContent className="text-sm text-muted-foreground">
-                        <CardContent className="text-sm text-muted-foreground"></CardContent> 
+                            <CardContent className="text-sm text-muted-foreground"></CardContent>
                             Dirección: Cl. 13 #7-30, Soacha, Cundinamarca
-                        <CardContent className="text-sm text-muted-foreground"></CardContent>
+                            <CardContent className="text-sm text-muted-foreground"></CardContent>
                             Teléfono: (601) 7305500
                         </CardContent>
                     </Card>
@@ -98,9 +98,9 @@ export default function RedApoyoPage() {
                             <CardDescription>Formación Técnica</CardDescription>
                         </CardHeader>
                         <CardContent className="text-sm text-muted-foreground">
-                        <CardContent className="text-sm text-muted-foreground"></CardContent>
+                            <CardContent className="text-sm text-muted-foreground"></CardContent>
                             Dirección: Cl. 13 #1093, Soacha, Cundinamarca
-                        <CardContent className="text-sm text-muted-foreground"></CardContent>
+                            <CardContent className="text-sm text-muted-foreground"></CardContent>
                             Teléfono: (601) 7301010
                         </CardContent>
                     </Card>
@@ -110,7 +110,6 @@ export default function RedApoyoPage() {
             {/* 3. COMUNIDADES DIGITALES Y MENTORÍAS
           Sección interactiva para unirse a grupos o solicitar un mentor.
       */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
                 {/* Grupos de WhatsApp/Telegram */}
                 <section className="p-8 rounded-3xl bg-muted/50 border space-y-6">
@@ -182,7 +181,7 @@ export default function RedApoyoPage() {
                             <p className="text-sm text-muted-foreground">Salón Comunal Ciudad Verde - 5:00 PM</p>
                         </div>
                     </div>
-                    <Button>Inscribirme gratis</Button>
+
                 </div>
             </section>
 
