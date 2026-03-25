@@ -11,6 +11,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import SoachaMap from "@/components/explora/SoachaMap";
 
 // ============================================
 // DATOS DE NEGOCIOS (Centralizados)
@@ -27,7 +28,7 @@ const negocios = [
     },
     {
         id: 2,
-        nombre: "Cafetal Express Premium",
+        nombre: "Café Cultural El Vergel",
         ubicacion: "Comuna 3, Soacha",
         descripcion: "Café de especialidad con granos cultivados en Cundinamarca. Ambiente cultural y música en vivo.",
         calificacion: 4.9,
@@ -36,7 +37,7 @@ const negocios = [
     },
     {
         id: 3,
-        nombre: "Telas Lafayette",
+        nombre: "Textiles Artesanales Tejiendo Sueños",
         ubicacion: "Comuna 4, Soacha",
         descripcion: "Prendas y accesorios elaborados por artesanas locales con técnicas tradicionales.",
         calificacion: 4.7,
@@ -45,7 +46,7 @@ const negocios = [
     },
     {
         id: 4,
-        nombre: "Urbatec",
+        nombre: "Construcciones EcoSoacha",
         ubicacion: "Corregimiento 2, Soacha",
         descripcion: "Proyectos de vivienda sostenible y materiales reciclados. Innovación en construcción.",
         calificacion: 4.8,
@@ -54,7 +55,7 @@ const negocios = [
     },
     {
         id: 5,
-        nombre: "Almacén tierra moda Soacha",
+        nombre: "Moda Urbana Soacha",
         ubicacion: "Comuna 1, Soacha",
         descripcion: "Ropa urbana diseñada por jóvenes emprendedores locales. Estilo único y precios accesibles.",
         calificacion: 4.6,
@@ -63,7 +64,7 @@ const negocios = [
     },
     {
         id: 6,
-        nombre: "Floristeria Laffut",
+        nombre: "Tech Solutions Soacha",
         ubicacion: "Comuna 5, Soacha",
         descripcion: "Reparación de dispositivos y asesoría tecnológica para pequeños negocios.",
         calificacion: 4.7,
@@ -198,29 +199,8 @@ export default function ExploraPage() {
 
                 {/* COLUMNA DE MAPA */}
                 <div className="hidden lg:block lg:col-span-5 relative">
-                    <div className="sticky top-24 h-[calc(100vh-140px)] rounded-3xl border bg-muted overflow-hidden">
-                        <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center space-y-4">
-                            <Map className="h-12 w-12 text-primary opacity-20" />
-                            <div className="space-y-2">
-                                <p className="font-medium">Mapa Interactivo de Soacha</p>
-                                <p className="text-xs text-muted-foreground max-w-[200px]">
-                                    Visualiza los emprendimientos por Comunas y Corregimientos.
-                                </p>
-                            </div>
-                            <div className="border-2 border-dashed rounded-lg p-4 w-full">
-                                <p className="text-[10px] uppercase font-bold text-muted-foreground">
-                                    Componente: SoachaMap (Mapbox/Leaflet)
-                                </p>
-                            </div>
-                        </div>
-                        <div className="absolute bottom-4 left-4 right-4 flex gap-2">
-                            <Button size="sm" className="flex-1 bg-background text-foreground hover:bg-muted">
-                                Comuna 1-6
-                            </Button>
-                            <Button size="sm" className="flex-1 bg-background text-foreground hover:bg-muted">
-                                Corregimientos
-                            </Button>
-                        </div>
+                    <div className="sticky top-24 h-[calc(100vh-140px)] rounded-3xl border overflow-hidden bg-muted/10">
+                        <SoachaMap />
                     </div>
                 </div>
 
