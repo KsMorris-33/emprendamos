@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Soacha Emprende
 
-## Getting Started
+**Soacha Emprende** es una plataforma digital dedicada a impulsar, educar y motivar el emprendimiento en el municipio de Soacha, Cundinamarca. A través de datos, recursos de aprendizaje, guías de formalización y casos de éxito locales, la aplicación busca ser una guía integral para los emprendedores de la región.
 
-First, run the development server:
+## 🚀 Tecnologías Principales
+
+El proyecto está construido utilizando un stack moderno enfocado en rendimiento y diseño UI/UX:
+
+- **Framework:** [Next.js 16.1](https://nextjs.org/) (App Router)
+- **Librería UI:** [React 19](https://react.dev/)
+- **Estilos:** [Tailwind CSS v4](https://tailwindcss.com/)
+- **Componentes Base:** [shadcn/ui](https://ui.shadcn.com/) y [Radix UI](https://www.radix-ui.com/)
+- **Iconografía:** [Lucide React](https://lucide.dev/) y [Huge Icons](https://hugeicons.com/)
+- **Temas:** Soporte para modo oscuro/claro con `next-themes`
+- **Fuentes:** Tipografías optimizadas con `next/font` (Outfit, Geist, Geist Mono)
+
+## 📂 Estructura y Arquitectura del Proyecto
+
+La arquitectura del proyecto sigue las convenciones del App Router de Next.js, complementada con una organización modular basada en características (features) para escalabilidad:
+
+```text
+d:\emprendamos\
+├── public/                 # Archivos estáticos y recursos públicos
+└── src/
+    ├── app/                # Rutas y páginas de la aplicación (App Router)
+    │   ├── apoyo/          # Recursos de apoyo, financiamiento o ayudas
+    │   ├── aprende/        # Portal educativo y Roadmap del Emprendedor Soachuno
+    │   ├── casos-exito/    # Historias de éxito de emprendedores locales
+    │   ├── cifras/         # Datos y estadísticas relevantes del ecosistema
+    │   ├── descubre/       # Sección de exploración de negocios o ideas
+    │   └── explora/        # Exploración de mercado local
+    │
+    ├── components/         # Componentes UI compartidos y de diseño general
+    │   ├── layout/         # Componentes estructurales (Navbar, Footer)
+    │   └── ui/             # Componentes base de shadcn/ui (inputs, buttons, etc.)
+    │
+    ├── features/           # Módulos específicos agrupados por dominio
+    │   ├── aprende/        # Lógica y componentes específicos para la sección educativa
+    │   ├── cifras/         # Gráficos y presentación de datos estadísticos
+    │   └── home/           # Componentes exclusivos de la página de inicio (Landing)
+    │
+    └── lib/                # Utilidades, configuración y funciones de ayuda (ej. utils.ts)
+```
+
+## 🎯 Finalidad de los Componentes Principales
+
+1. **Aprende (`/aprende`)**: Es el núcleo educativo, que ofrece una "Ruta del Emprendedor Soachuno", guías legales para constitución en la Cámara de Comercio, estrategias de marketing para el mercado local y micro-cápsulas de aprendizaje en video.
+2. **Cifras (`/cifras`)**: Motiva e informa a los usuarios mediante estadísticas reales del emprendimiento en la región.
+3. **Casos de Éxito (`/casos-exito`)**: Fomenta la inspiración mostrando testimonios y trayectorias de negocios locales que han sobresalido.
+
+## ⚙️ Instalación y Uso Local
+
+Para ejecutar el entorno de desarrollo en tu máquina local:
+
+1. Clona el repositorio u obtén el código fuente.
+2. Instala las dependencias necesarias:
+
+```bash
+npm install
+# o
+yarn install
+# o
+pnpm install
+```
+
+3. Inicia el servidor de desarrollo:
 
 ```bash
 npm run dev
-# or
+# o
 yarn dev
-# or
+# o
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Abre tu navegador e ingresa a [http://localhost:3000](http://localhost:3000) para ver la aplicación en funcionamiento.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+*Este proyecto fue inicializado con `create-next-app` y está en continuo desarrollo.*
