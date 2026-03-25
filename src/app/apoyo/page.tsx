@@ -58,9 +58,9 @@ export default function RedApoyoPage() {
                             <CardDescription>Sede Soacha - Centro</CardDescription>
                         </CardHeader>
                         <CardContent className="text-sm text-muted-foreground">
-                         <CardContent className="text-sm text-muted-foreground"></CardContent>    
+                            <CardContent className="text-sm text-muted-foreground"></CardContent>
                             Dirección: Cra. 7 #11 - 83, Soacha, Cundinamarca
-                         <CardContent className="text-sm text-muted-foreground"></CardContent>
+                            <CardContent className="text-sm text-muted-foreground"></CardContent>
                             Teléfono: (601) 3830330
                         </CardContent>
                     </Card>
@@ -78,9 +78,9 @@ export default function RedApoyoPage() {
                             <CardDescription>Programas Municipales</CardDescription>
                         </CardHeader>
                         <CardContent className="text-sm text-muted-foreground">
-                        <CardContent className="text-sm text-muted-foreground"></CardContent> 
+                            <CardContent className="text-sm text-muted-foreground"></CardContent>
                             Dirección: Cl. 13 #7-30, Soacha, Cundinamarca
-                        <CardContent className="text-sm text-muted-foreground"></CardContent>
+                            <CardContent className="text-sm text-muted-foreground"></CardContent>
                             Teléfono: (601) 7305500
                         </CardContent>
                     </Card>
@@ -98,9 +98,9 @@ export default function RedApoyoPage() {
                             <CardDescription>Formación Técnica</CardDescription>
                         </CardHeader>
                         <CardContent className="text-sm text-muted-foreground">
-                        <CardContent className="text-sm text-muted-foreground"></CardContent>
+                            <CardContent className="text-sm text-muted-foreground"></CardContent>
                             Dirección: Cl. 13 #1093, Soacha, Cundinamarca
-                        <CardContent className="text-sm text-muted-foreground"></CardContent>
+                            <CardContent className="text-sm text-muted-foreground"></CardContent>
                             Teléfono: (601) 7301010
                         </CardContent>
                     </Card>
@@ -110,45 +110,7 @@ export default function RedApoyoPage() {
             {/* 3. COMUNIDADES DIGITALES Y MENTORÍAS
           Sección interactiva para unirse a grupos o solicitar un mentor.
       */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
-                {/* Grupos de WhatsApp/Telegram */}
-                <section className="p-8 rounded-3xl bg-muted/50 border space-y-6">
-                    <div className="flex items-center gap-3">
-                        <MessagesSquare className="h-8 w-8 text-primary" />
-                        <h3 className="text-2xl font-bold italic">Comunidades de Barrio</h3>
-                    </div>
-                    <p className="text-muted-foreground">
-                        Únete a los grupos de emprendedores de tu comuna para compartir recursos y clientes.
-                    </p>
-
-                    {/* Espacio para componente: @/features/network/components/CommunityGroupsList */}
-                    <div className="space-y-3">
-                        <div className="p-4 bg-card rounded-xl border-2 border-dashed text-center text-sm text-muted-foreground italic">
-                            Componente: CommunityLinks (WhatsApp por Comuna)
-                        </div>
-                    </div>
-                    <Button variant="outline" className="w-full">Explorar Grupos</Button>
-                </section>
-
-                {/* Programa de Mentoría */}
-                <section className="p-8 rounded-3xl bg-primary text-primary-foreground space-y-6 shadow-xl shadow-primary/20">
-                    <div className="flex items-center gap-3">
-                        <Users2 className="h-8 w-8" />
-                        <h3 className="text-2xl font-bold italic">Mentoría 1-a-1</h3>
-                    </div>
-                    <p className="text-primary-foreground/80">
-                        ¿Ya tienes un negocio y quieres ayudar a otros? ¿Necesitas guía de un experto soachuno?
-                    </p>
-
-                    {/* Espacio para componente: @/features/network/components/MentorshipForm */}
-                    <div className="p-4 bg-white/10 rounded-xl border border-white/20 text-center text-sm italic">
-                        Componente: MentorshipMatching (Formulario de aplicación)
-                    </div>
-                    <Button variant="secondary" className="w-full">Postularme como Mentor/Menta</Button>
-                </section>
-
-            </div>
 
             {/* 4. PRÓXIMOS ENCUENTROS DE NETWORKING
           Lista de eventos para conocer gente en persona.
@@ -166,7 +128,7 @@ export default function RedApoyoPage() {
                             <p className="text-sm text-muted-foreground">Salón Comunal Ciudad Verde - 5:00 PM</p>
                         </div>
                     </div>
-                    <Button>Inscribirme gratis</Button>
+
                 </div>
             </section>
 

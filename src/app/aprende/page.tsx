@@ -36,13 +36,7 @@ export default function AprendePage() {
                 </p>
 
                 {/* Buscador de recursos */}
-                <div className="relative w-full max-w-md mt-4">
-                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                    <Input
-                        placeholder="¿Qué quieres aprender hoy? (Ej: Formalización)"
-                        className="pl-10 h-12 rounded-full"
-                    />
-                </div>
+
             </header>
 
             {/* 2. CATEGORÍAS DE APRENDIZAJE
@@ -56,7 +50,7 @@ export default function AprendePage() {
                         Pasos legales para constituir tu empresa en Soacha y beneficios tributarios locales.
                     </p>
                     <div className="mt-4 pt-4">
-                        <a 
+                        <a
                             href="/aprende/pasos-empresa.pdf"
                             download="pasos-empresa.pdf"
                             className="w-full bg-teal-500 hover:bg-teal-600 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
@@ -77,8 +71,8 @@ export default function AprendePage() {
                         Cómo vender más en tu comuna y expandir tu alcance a todo Cundinamarca.
                     </p>
                     <div className="mt-4 pt-4">
-                            <SalesStrategiesModal />
-                        </div>
+                        <SalesStrategiesModal />
+                    </div>
                     <div className="mt-4 pt-4 border-t border-dashed text-xs italic text-center text-muted-foreground">
                         Conoce más aquí
                     </div>
@@ -86,15 +80,15 @@ export default function AprendePage() {
 
                 <div className="p-6 rounded-2xl border bg-card hover:shadow-md transition-all group cursor-pointer">
                     <PlayCircle className="h-8 w-8 text-primary mb-4" />
-                    <h3 className="text-xl font-bold">Cursos en Video</h3>
+                    <h3 className="text-xl font-bold">Certificate en linea</h3>
                     <p className="text-sm text-muted-foreground mt-2">
-                        Micro-cápsulas de aprendizaje con expertos y empresarios exitosos de la región.
+                        Cursos y especializaciones en todas las areas de tu interes
                     </p>
                     <div className="mt-4 pt-4">
                         <LearningPlatformsModal />
                     </div>
                     <div className="mt-4 pt-4 border-t border-dashed text-xs italic text-center text-muted-foreground">
-                        Cápsulas en solo 5 min
+                        Cursos en todas las areas
                     </div>
                 </div>
             </section>
@@ -110,7 +104,7 @@ export default function AprendePage() {
                             No camines solo. Hemos diseñado un mapa paso a paso para que lleves tu idea
                             desde el barrio hasta el mercado nacional.
                         </p>
-                        <Button className="mt-4">Empezar mi Ruta</Button>
+
                     </div>
 
 
@@ -127,7 +121,7 @@ export default function AprendePage() {
                     <h2 className="text-2xl font-bold flex items-center gap-2">
                         <BookOpen className="h-6 w-6 text-primary" /> Talleres Presenciales en Soacha
                     </h2>
-                    <Button variant="link">Ver calendario completo</Button>
+
                 </div>
 
                 {/* Espacio para componente: @/features/learning/components/EventsList */}
