@@ -1,9 +1,10 @@
-import { Metadata } from "next";
+"use client";
+
+import { useState } from "react";
 import {
     Map,
     Search,
     SlidersHorizontal,
-    Store,
     MapPin,
     Star
 } from "lucide-react";
@@ -11,16 +12,147 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
-export const metadata: Metadata = {
-    title: "Explora Negocios Locales | Soacha Emprende",
-    description: "Descubre el ecosistema comercial de Soacha. Filtra por comunas y categorías.",
-};
+// ============================================
+// DATOS DE NEGOCIOS (Centralizados)
+// ============================================
+const negocios = [
+    {
+        id: 1,
+        nombre: "Panadería Artesanal Alejandria",
+        ubicacion: "San Mateo, Soacha",
+        descripcion: "Especialistas en pan de masa madre y productos típicos de la región. Más de 10 años de experiencia.",
+        calificacion: 4.8,
+        imagen: "/negocios/panaderia-alejandria.webp",
+        categoria: "Gastronomía"
+    },
+    {
+        id: 2,
+        nombre: "Cafetal Express Premium",
+        ubicacion: "Comuna 3, Soacha",
+        descripcion: "Café de especialidad con granos cultivados en Cundinamarca. Ambiente cultural y música en vivo.",
+        calificacion: 4.9,
+        imagen: "/negocios/cafe-el-vergel.webp",
+        categoria: "Gastronomía"
+    },
+    {
+        id: 3,
+        nombre: "Telas Lafayette",
+        ubicacion: "Comuna 4, Soacha",
+        descripcion: "Prendas y accesorios elaborados por artesanas locales con técnicas tradicionales.",
+        calificacion: 4.7,
+        imagen: "/negocios/textiles-tejiendo-suenos.webp",
+        categoria: "Artesanías"
+    },
+    {
+        id: 4,
+        nombre: "Urbatec",
+        ubicacion: "Corregimiento 2, Soacha",
+        descripcion: "Proyectos de vivienda sostenible y materiales reciclados. Innovación en construcción.",
+        calificacion: 4.8,
+        imagen: "/negocios/ecosoacha.webp",
+        categoria: "Servicios"
+    },
+    {
+        id: 5,
+        nombre: "Almacén tierra moda Soacha",
+        ubicacion: "Comuna 1, Soacha",
+        descripcion: "Ropa urbana diseñada por jóvenes emprendedores locales. Estilo único y precios accesibles.",
+        calificacion: 4.6,
+        imagen: "/negocios/moda-urbana.webp",
+        categoria: "Moda"
+    },
+    {
+        id: 6,
+        nombre: "Floristeria Laffut",
+        ubicacion: "Comuna 5, Soacha",
+        descripcion: "Reparación de dispositivos y asesoría tecnológica para pequeños negocios.",
+        calificacion: 4.7,
+        imagen: "/negocios/tech-solutions.webp",
+        categoria: "Tecnología"
+    }
+];
 
+// ============================================
+// COMPONENTE: Tarjeta de Negocio
+// ============================================
+function BusinessCard({ negocio }: { negocio: typeof negocios[0] }) {
+    return (
+        <div className="group rounded-xl border bg-card overflow-hidden hover:shadow-lg transition-all">
+            <div className="aspect-video bg-muted relative">
+                <div className="absolute top-2 right-2">
+                    <Badge className="bg-background/80 backdrop-blur-md text-foreground">
+                        <Star className="h-3 w-3 mr-1 fill-yellow-400 text-yellow-400" />
+                        {negocio.calificacion}
+                    </Badge>
+                </div>
+                <img
+                    src={negocio.imagen}
+                    alt={negocio.nombre}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                        e.currentTarget.src = "/placeholder-negocio.webp";
+                    }}
+                />
+            </div>
+            <div className="p-4 space-y-2">
+                <h3 className="font-bold text-lg line-clamp-1">{negocio.nombre}</h3>
+                <div className="flex items-center text-sm text-muted-foreground">
+                    <MapPin className="h-3 w-3 mr-1 shrink-0" />
+                    <span className="line-clamp-1">{negocio.ubicacion}</span>
+                </div>
+                <p className="text-xs text-muted-foreground line-clamp-2">
+                    {negocio.descripcion}
+                </p>
+                <div className="pt-2">
+                    <Button variant="link" className="p-0 h-auto text-primary">
+                        Ver detalles →
+                    </Button>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+// ============================================
+// COMPONENTE: Lista de Negocios con Carga Progresiva
+// ============================================
+function BusinessList({ negocios, initialCount = 4 }: { negocios: typeof negocios, initialCount?: number }) {
+    const [visibleCount, setVisibleCount] = useState(initialCount);
+    const hasMore = visibleCount < negocios.length;
+
+    const loadMore = () => {
+        setVisibleCount(prev => Math.min(prev + 4, negocios.length));
+    };
+
+    const visibleNegocios = negocios.slice(0, visibleCount);
+
+    return (
+        <div className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {visibleNegocios.map((negocio) => (
+                    <BusinessCard key={negocio.id} negocio={negocio} />
+                ))}
+            </div>
+
+            {hasMore && (
+                <div className="flex justify-center pt-6">
+                    <Button variant="outline" onClick={loadMore}>
+                        Cargar más negocios
+                    </Button>
+                </div>
+            )}
+        </div>
+    );
+}
+
+// ============================================
+// PÁGINA PRINCIPAL
+// ============================================
 export default function ExploraPage() {
     return (
         <div className="container mx-auto py-10 px-4 space-y-8">
 
-            {/* 1. HEADER & BUSCADOR */}
+            {/* HEADER & BUSCADOR */}
             <header className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
                 <div className="space-y-1">
                     <h1 className="text-3xl font-bold tracking-tight">Directorio Local</h1>
@@ -40,9 +172,7 @@ export default function ExploraPage() {
                 </div>
             </header>
 
-            {/* 2. FILTROS RÁPIDOS POR CATEGORÍA
-          Componente futuro: @/features/explora/components/CategoryFilters
-      */}
+            {/* FILTROS RÁPIDOS POR CATEGORÍA */}
             <div className="flex flex-wrap gap-2 pb-2">
                 {["Todos", "Gastronomía", "Moda", "Tecnología", "Artesanías", "Servicios"].map((cat) => (
                     <Badge key={cat} variant="secondary" className="px-4 py-1 cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors">
@@ -51,62 +181,22 @@ export default function ExploraPage() {
                 ))}
             </div>
 
-            {/* 3. LAYOUT PRINCIPAL: LISTADO Y MAPA
-          En escritorio usamos un grid para mostrar el mapa al lado.
-      */}
+            {/* LAYOUT PRINCIPAL: LISTADO Y MAPA */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
 
-                {/* COLUMNA DE RESULTADOS (Izquierda) */}
+                {/* COLUMNA DE RESULTADOS */}
                 <div className="lg:col-span-7 space-y-6">
                     <div className="flex items-center justify-between">
                         <h2 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-                            Mostrando 12 resultados en Soacha
+                            Mostrando {negocios.length} negocios en Soacha
                         </h2>
                     </div>
 
-                    {/* Iteración de Negocios
-              Componente futuro: @/features/explora/components/BusinessCard
-          */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        {[1, 2, 3, 4].map((i) => (
-                            <div key={i} className="group rounded-xl border bg-card overflow-hidden hover:shadow-lg transition-all">
-                                <div className="aspect-video bg-muted relative">
-                                    <div className="absolute top-2 right-2">
-                                        <Badge className="bg-background/80 backdrop-blur-md text-foreground">
-                                            <Star className="h-3 w-3 mr-1 fill-yellow-400 text-yellow-400" /> 4.8
-                                        </Badge>
-                                    </div>
-                                    {/* Placeholder de Imagen */}
-                                    <div className="w-full h-full flex items-center justify-center italic text-xs text-muted-foreground">
-                                        Imagen del Negocio {i}
-                                    </div>
-                                </div>
-                                <div className="p-4 space-y-2">
-                                    <h3 className="font-bold text-lg">Pan artesanal Comuna 2</h3>
-                                    <div className="flex items-center text-sm text-muted-foreground">
-                                        <MapPin className="h-3 w-3 mr-1" /> San Mateo, Soacha
-                                    </div>
-                                    <p className="text-xs text-muted-foreground line-clamp-2">
-                                        Especialistas en pan de masa madre y productos típicos de la región.
-                                    </p>
-                                    <div className="pt-2">
-                                        <Button variant="link" className="p-0 h-auto text-primary">
-                                            Ver detalles →
-                                        </Button>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-
-                    <div className="flex justify-center pt-6">
-                        <Button variant="outline">Cargar más negocios</Button>
-                    </div>
+                    {/* Lista de Negocios */}
+                    <BusinessList negocios={negocios} initialCount={4} />
                 </div>
 
-                {/* COLUMNA DE MAPA (Derecha - Sticky)
-            Componente futuro: @/features/explora/components/SoachaMap
-        */}
+                {/* COLUMNA DE MAPA */}
                 <div className="hidden lg:block lg:col-span-5 relative">
                     <div className="sticky top-24 h-[calc(100vh-140px)] rounded-3xl border bg-muted overflow-hidden">
                         <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center space-y-4">
@@ -123,7 +213,6 @@ export default function ExploraPage() {
                                 </p>
                             </div>
                         </div>
-                        {/* Overlay de botones de control */}
                         <div className="absolute bottom-4 left-4 right-4 flex gap-2">
                             <Button size="sm" className="flex-1 bg-background text-foreground hover:bg-muted">
                                 Comuna 1-6
@@ -137,7 +226,7 @@ export default function ExploraPage() {
 
             </div>
 
-            {/* 4. BANNER DE REGISTRO */}
+            {/* BANNER DE REGISTRO */}
             <section className="rounded-3xl bg-primary/5 border border-primary/20 p-8 text-center md:text-left">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                     <div className="space-y-2">

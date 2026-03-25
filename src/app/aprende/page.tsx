@@ -53,9 +53,14 @@ export default function AprendePage() {
                     <p className="text-sm text-muted-foreground mt-2">
                         Pasos legales para constituir tu empresa en Soacha y beneficios tributarios locales.
                     </p>
-                    {/* Espacio para componente: <ResourceList category="legal" /> */}
+                    <div className="mt-4 pt-4">
+                        <button className="w-full bg-teal-500 hover:bg-teal-600 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2">
+                            <FileText className="h-4 w-4" />
+                            Descargar PDF
+                        </button>
+                    </div>
                     <div className="mt-4 pt-4 border-t border-dashed text-xs italic text-center text-muted-foreground">
-                        Componente: ResourceList (Descargables PDF)
+                        Contenido Gratis
                     </div>
                 </div>
 
@@ -65,8 +70,14 @@ export default function AprendePage() {
                     <p className="text-sm text-muted-foreground mt-2">
                         Cómo vender más en tu comuna y expandir tu alcance a todo Cundinamarca.
                     </p>
+                    <div className="mt-4 pt-4">
+                            <button className="w-full bg-teal-500 hover:bg-teal-600 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2">
+                                <Lightbulb className="h-4 w-4" />
+                                Ver estrategias de ventas
+                            </button>
+                        </div>
                     <div className="mt-4 pt-4 border-t border-dashed text-xs italic text-center text-muted-foreground">
-                        Componente: ResourceList (Estrategias Digitales)
+                        Conoce más aquí
                     </div>
                 </div>
 
@@ -76,8 +87,14 @@ export default function AprendePage() {
                     <p className="text-sm text-muted-foreground mt-2">
                         Micro-cápsulas de aprendizaje con expertos y empresarios exitosos de la región.
                     </p>
+                    <div className="mt-4 pt-4">
+                        <button className="w-full bg-teal-500 hover:bg-teal-600 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2">
+                            <PlayCircle className="h-4 w-4" />
+                            Ver cursos en video
+                        </button>
+                    </div>
                     <div className="mt-4 pt-4 border-t border-dashed text-xs italic text-center text-muted-foreground">
-                        Componente: VideoPlaylist (Cápsulas de 5 min)
+                        Cápsulas en solo 5 min
                     </div>
                 </div>
             </section>

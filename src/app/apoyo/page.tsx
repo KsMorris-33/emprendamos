@@ -58,7 +58,10 @@ export default function RedApoyoPage() {
                             <CardDescription>Sede Soacha - Centro</CardDescription>
                         </CardHeader>
                         <CardContent className="text-sm text-muted-foreground">
-                            Formalización empresarial, capacitaciones y ferias comerciales locales.
+                         <CardContent className="text-sm text-muted-foreground"></CardContent>    
+                            Dirección: Cra. 7 #11 - 83, Soacha, Cundinamarca
+                         <CardContent className="text-sm text-muted-foreground"></CardContent>
+                            Teléfono: (601) 3830330
                         </CardContent>
                     </Card>
 
@@ -75,7 +78,10 @@ export default function RedApoyoPage() {
                             <CardDescription>Programas Municipales</CardDescription>
                         </CardHeader>
                         <CardContent className="text-sm text-muted-foreground">
-                            Acceso a capital semilla, programas de empleo y apoyo a microempresas.
+                        <CardContent className="text-sm text-muted-foreground"></CardContent> 
+                            Dirección: Cl. 13 #7-30, Soacha, Cundinamarca
+                        <CardContent className="text-sm text-muted-foreground"></CardContent>
+                            Teléfono: (601) 7305500
                         </CardContent>
                     </Card>
 
@@ -92,7 +98,10 @@ export default function RedApoyoPage() {
                             <CardDescription>Formación Técnica</CardDescription>
                         </CardHeader>
                         <CardContent className="text-sm text-muted-foreground">
-                            Cursos técnicos, fondo emprender y asesoría en innovación tecnológica.
+                        <CardContent className="text-sm text-muted-foreground"></CardContent>
+                            Dirección: Cl. 13 #1093, Soacha, Cundinamarca
+                        <CardContent className="text-sm text-muted-foreground"></CardContent>
+                            Teléfono: (601) 7301010
                         </CardContent>
                     </Card>
                 </div>
